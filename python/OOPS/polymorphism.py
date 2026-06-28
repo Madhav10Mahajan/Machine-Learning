@@ -63,3 +63,33 @@ rectangle=Rectangle(4,5)
 circle=Circle(4)
 print_area(circle)
 print_area(rectangle) 
+
+# polymorphism with abstract base class (ABC)
+# are used to define common methods for a group of related objects
+# they can enforce that derived classes implement particular methods, promoting consistency across different implementations
+from abc import ABC,abstractmethod
+
+#define an abstract class empty class/empty method the derived classes would define the method 
+class Vehicle(ABC):
+    @abstractmethod
+    def start_engine(self):
+        pass
+
+# derived class 1
+class Car(Vehicle):
+    def start_engine(self):
+        return "Car engine started"
+
+# derived class 2
+class Bike(Vehicle):
+    def start_engine(self):
+        return "Bike engine started"
+
+bike=Bike()
+car=Car()
+
+def start_vehicle(vehicle):
+    return vehicle.start_engine()
+
+print(start_vehicle(bike))
+print(start_vehicle(car ))
