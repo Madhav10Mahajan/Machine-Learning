@@ -1,3 +1,4 @@
 ipykernel
 numpy 
+pandas
 # conda activate venv/ to activate your virtual envt
